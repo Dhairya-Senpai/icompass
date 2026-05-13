@@ -22,7 +22,6 @@ export default defineConfig(({ mode }) => {
           manualChunks: {
             vendor: ['react', 'react-dom', 'react-router-dom'],
             state: ['zustand', 'immer'],
-            query: ['@tanstack/react-query'],
           },
         },
       },
