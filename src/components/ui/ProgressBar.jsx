@@ -15,28 +15,3 @@ export function ProgressBar({ value, max, color = 'blue', showLabel = true, clas
     </div>
   )
 }
-
-export function StatCard({ label, value, sub, className }) {
-  return (
-    <div className={cn('bg-gray-50 rounded-lg p-4', className)}>
-      <p className="text-xs text-gray-500 mb-1">{label}</p>
-      <p className="text-2xl font-semibold text-gray-900 leading-none">{value}</p>
-      {sub && <p className="text-xs text-gray-400 mt-1">{sub}</p>}
-    </div>
-  )
-}
-
-export function EmptyState({ icon = 'ti-inbox', title = 'Nothing here yet', description, action }) {
-  return (
-    <div className="flex flex-col items-center justify-center py-12 text-center">
-      <i className={cn('ti', icon, 'text-3xl text-gray-300 mb-3')} aria-hidden="true" />
-      <p className="text-sm font-medium text-gray-500">{title}</p>
-      {description && <p className="text-xs text-gray-400 mt-1 max-w-xs">{description}</p>}
-      {action && <div className="mt-4">{action}</div>}
-    </div>
-  )
-}
-
-export function Spinner({ className }) {
-  return <i className={cn('ti ti-loader-2 animate-spin text-gray-400', className)} aria-hidden="true" />
-}
