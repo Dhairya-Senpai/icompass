@@ -13,7 +13,7 @@ export function HypothesisPage() {
     .map(i => `- ${i.contact} (${i.org}): ${i.insights}`)
     .join('\n') || 'No analyzed interviews yet.'
 
-  const systemPrompt = `You are an expert I-Corps mentor helping early-stage research teams with customer discovery.
+  const systemPrompt = `You are an expert icompass mentor helping early-stage research teams with customer discovery.
 
 Team: ${team?.name ?? 'Unknown'}
 Customer segment: ${team?.segment ?? 'Unknown'}
@@ -29,7 +29,7 @@ Your role:
 - Ask probing questions to surface gaps in evidence
 - Suggest revised hypothesis wording when evidence supports it
 - Flag when the team should consider pivoting
-- Reference NSF I-Corps program expectations where relevant
+- Reference NSF icompass program expectations where relevant
 
 Be direct, evidence-based, and practical. Keep responses concise.`
 

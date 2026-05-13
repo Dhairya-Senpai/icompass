@@ -14,7 +14,7 @@ const TITLES = {
 
 export function AppShell() {
   const { pathname } = useLocation()
-  const title = TITLES[pathname] ?? 'I-Corps Platform'
+  const title = TITLES[pathname] ?? 'icompass Platform'
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-50">

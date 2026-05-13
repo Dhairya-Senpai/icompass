@@ -104,9 +104,9 @@ export const SEED_DATA = {
     {
       id: 'c-01',
       title: 'Customer Discovery Fundamentals',
-      description: 'Core I-Corps methodology and lean startup foundations.',
+      description: 'Core icompass methodology and lean startup foundations.',
       modules: [
-        'Intro to I-Corps & NSF requirements',
+        'Intro to icompass & NSF requirements',
         'The Lean Canvas framework',
         'Interview basics & mindset',
         'Hypothesis framework',

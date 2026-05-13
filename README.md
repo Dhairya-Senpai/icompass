@@ -1,6 +1,6 @@
-# I-Corps Platform
+# icompass Platform
 
-A web-based learning and customer discovery platform for NSF I-Corps participants, instructors, and administrators. Built with React + Vite + Zustand. Deployable to GitHub Pages with zero backend.
+A web-based learning and customer discovery platform for NSF icompass participants, instructors, and administrators. Built with React + Vite + Zustand. Deployable to GitHub Pages with zero backend.
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Deploy](https://img.shields.io/badge/deploy-GitHub%20Pages-green)
@@ -66,7 +66,7 @@ Go to **Settings → Secrets and variables → Actions → Variables** (not Secr
 | Variable | Example value | Notes |
 |---|---|---|
 | `VITE_BASE_URL` | `/icompass-platform/` | Must match your repo name, with leading and trailing `/` |
-| `VITE_APP_NAME` | `I-Corps Platform` | Displayed in sidebar and browser tab |
+| `VITE_APP_NAME` | `icompass Platform` | Displayed in sidebar and browser tab |
 | `VITE_APP_TAGLINE` | `Spring 2025 Cohort` | Subtitle under the app name |
 | `VITE_OLLAMA_BASE_URL` | `http://localhost:11434` | URL of Ollama instance |
 | `VITE_OLLAMA_MODEL` | `llama3.2` | Model name (must be pulled) |

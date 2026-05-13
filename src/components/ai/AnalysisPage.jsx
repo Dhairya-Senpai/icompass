@@ -13,7 +13,7 @@ export function AnalysisPage() {
   const interview   = (interviewId ? interviews.find(i => i.id === interviewId) : null) ?? interviews[0]
   const team        = teams.find(t => t.id === interview?.teamId)
 
-  const systemPrompt = interview ? `You are an I-Corps customer discovery analyst.
+  const systemPrompt = interview ? `You are an icompass customer discovery analyst.
 
 Interview details:
 - Contact: ${interview.contact}, ${interview.role} at ${interview.org}

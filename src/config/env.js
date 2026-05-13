@@ -19,7 +19,7 @@ function boolEnv(key, fallback = true) {
 }
 
 export const APP_CONFIG = {
-  name: requireEnv('VITE_APP_NAME', 'I-Corps Platform'),
+  name: requireEnv('VITE_APP_NAME', 'icompass Platform'),
   tagline: requireEnv('VITE_APP_TAGLINE', 'Customer Discovery Platform'),
   baseUrl: requireEnv('VITE_BASE_URL', '/'),
   storageKey: requireEnv('VITE_STORAGE_KEY', 'icompass_v1'),
