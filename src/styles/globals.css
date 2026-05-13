@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply text-gray-900 bg-gray-50 antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+
+  /* Slim scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+}
+
+@layer utilities {
+  /* Bounce animation for typing dots */
+  .animate-bounce-dot {
+    animation: bounce-dot 1.2s ease-in-out infinite;
+  }
+  @keyframes bounce-dot {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+  }
+}

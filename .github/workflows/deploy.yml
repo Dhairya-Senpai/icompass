@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          # These are set as GitHub Actions Variables (non-secret) or Secrets
+          # Go to: Settings → Secrets and variables → Actions
+          VITE_BASE_URL: ${{ vars.VITE_BASE_URL || '/icorps-platform/' }}
+          VITE_APP_NAME: ${{ vars.VITE_APP_NAME || 'I-Corps Platform' }}
+          VITE_APP_TAGLINE: ${{ vars.VITE_APP_TAGLINE || 'Customer Discovery Platform' }}
+          VITE_OLLAMA_BASE_URL: ${{ vars.VITE_OLLAMA_BASE_URL || 'http://localhost:11434' }}
+          VITE_OLLAMA_MODEL: ${{ vars.VITE_OLLAMA_MODEL || 'llama3.2' }}
+          VITE_OLLAMA_TIMEOUT: ${{ vars.VITE_OLLAMA_TIMEOUT || '60000' }}
+          VITE_FEATURE_AI_HYPOTHESIS: ${{ vars.VITE_FEATURE_AI_HYPOTHESIS || 'true' }}
+          VITE_FEATURE_AI_ANALYSIS: ${{ vars.VITE_FEATURE_AI_ANALYSIS || 'true' }}
+          VITE_FEATURE_EXPORT: ${{ vars.VITE_FEATURE_EXPORT || 'true' }}
+          VITE_DEFAULT_INTERVIEW_GOAL: ${{ vars.VITE_DEFAULT_INTERVIEW_GOAL || '15' }}
+          VITE_STORAGE_KEY: ${{ vars.VITE_STORAGE_KEY || 'icorps_v1' }}
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
