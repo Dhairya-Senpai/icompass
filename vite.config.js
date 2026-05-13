@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     plugins: [react()],
-    // base must match your GitHub Pages repo name, e.g. /icorps-platform/
+    // base must match your GitHub Pages repo name, e.g. /icompass-platform/
     // Override via VITE_BASE_URL in .env.production
     base: env.VITE_BASE_URL || '/',
     resolve: {

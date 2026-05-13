@@ -33,7 +33,7 @@ export function exportInterviewsCSV(interviews, teams) {
   ].map(v => `"${v}"`).join(','))
 
   const csv = [headers.join(','), ...rows].join('\n')
-  downloadBlob(new Blob([csv], { type: 'text/csv;charset=utf-8;' }), 'icorps-interviews.csv')
+  downloadBlob(new Blob([csv], { type: 'text/csv;charset=utf-8;' }), 'icompass-interviews.csv')
 }
 
 /**
@@ -41,5 +41,5 @@ export function exportInterviewsCSV(interviews, teams) {
  */
 export function exportFullJSON(storeSnapshot) {
   const json = JSON.stringify(storeSnapshot, null, 2)
-  downloadBlob(new Blob([json], { type: 'application/json' }), 'icorps-export.json')
+  downloadBlob(new Blob([json], { type: 'application/json' }), 'icompass-export.json')
 }

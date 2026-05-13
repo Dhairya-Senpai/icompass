@@ -34,7 +34,7 @@ jobs:
         env:
           # These are set as GitHub Actions Variables (non-secret) or Secrets
           # Go to: Settings → Secrets and variables → Actions
-          VITE_BASE_URL: ${{ vars.VITE_BASE_URL || '/icorps-platform/' }}
+          VITE_BASE_URL: ${{ vars.VITE_BASE_URL || '/icompass-platform/' }}
           VITE_APP_NAME: ${{ vars.VITE_APP_NAME || 'I-Corps Platform' }}
           VITE_APP_TAGLINE: ${{ vars.VITE_APP_TAGLINE || 'Customer Discovery Platform' }}
           VITE_OLLAMA_BASE_URL: ${{ vars.VITE_OLLAMA_BASE_URL || 'http://localhost:11434' }}
@@ -44,7 +44,7 @@ jobs:
           VITE_FEATURE_AI_ANALYSIS: ${{ vars.VITE_FEATURE_AI_ANALYSIS || 'true' }}
           VITE_FEATURE_EXPORT: ${{ vars.VITE_FEATURE_EXPORT || 'true' }}
           VITE_DEFAULT_INTERVIEW_GOAL: ${{ vars.VITE_DEFAULT_INTERVIEW_GOAL || '15' }}
-          VITE_STORAGE_KEY: ${{ vars.VITE_STORAGE_KEY || 'icorps_v1' }}
+          VITE_STORAGE_KEY: ${{ vars.VITE_STORAGE_KEY || 'icompass_v1' }}
         run: npm run build
 
       - name: Upload artifact

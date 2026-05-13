@@ -22,7 +22,7 @@ export const APP_CONFIG = {
   name: requireEnv('VITE_APP_NAME', 'I-Corps Platform'),
   tagline: requireEnv('VITE_APP_TAGLINE', 'Customer Discovery Platform'),
   baseUrl: requireEnv('VITE_BASE_URL', '/'),
-  storageKey: requireEnv('VITE_STORAGE_KEY', 'icorps_v1'),
+  storageKey: requireEnv('VITE_STORAGE_KEY', 'icompass_v1'),
   interviewGoal: parseInt(requireEnv('VITE_DEFAULT_INTERVIEW_GOAL', '15'), 10),
 }
 

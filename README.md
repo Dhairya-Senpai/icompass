@@ -30,8 +30,8 @@ A web-based learning and customer discovery platform for NSF I-Corps participant
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/icorps-platform.git
-cd icorps-platform
+git clone https://github.com/YOUR_USERNAME/icompass-platform.git
+cd icompass-platform
 
 # 2. Install
 npm install
@@ -65,7 +65,7 @@ Go to **Settings → Secrets and variables → Actions → Variables** (not Secr
 
 | Variable | Example value | Notes |
 |---|---|---|
-| `VITE_BASE_URL` | `/icorps-platform/` | Must match your repo name, with leading and trailing `/` |
+| `VITE_BASE_URL` | `/icompass-platform/` | Must match your repo name, with leading and trailing `/` |
 | `VITE_APP_NAME` | `I-Corps Platform` | Displayed in sidebar and browser tab |
 | `VITE_APP_TAGLINE` | `Spring 2025 Cohort` | Subtitle under the app name |
 | `VITE_OLLAMA_BASE_URL` | `http://localhost:11434` | URL of Ollama instance |
@@ -75,7 +75,7 @@ Go to **Settings → Secrets and variables → Actions → Variables** (not Secr
 | `VITE_FEATURE_AI_ANALYSIS` | `true` | Show/hide interview analysis AI |
 | `VITE_FEATURE_EXPORT` | `true` | Show/hide data export |
 | `VITE_DEFAULT_INTERVIEW_GOAL` | `15` | Interview target per team |
-| `VITE_STORAGE_KEY` | `icorps_v1` | localStorage namespace |
+| `VITE_STORAGE_KEY` | `icompass_v1` | localStorage namespace |
 
 > **Tip:** If you skip setting variables, sensible defaults are used (see `deploy.yml`).
 
@@ -88,14 +88,14 @@ git push origin main
 ```
 
 The Actions workflow builds and deploys automatically. Your site will be live at:
-`https://YOUR_USERNAME.github.io/icorps-platform/`
+`https://YOUR_USERNAME.github.io/icompass-platform/`
 
 ---
 
 ## Project structure
 
 ```
-icorps-platform/
+icompass-platform/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions CI/CD
@@ -191,7 +191,7 @@ All data lives in `localStorage`. To reset to seed data:
 
 ```js
 // In browser console:
-localStorage.removeItem('icorps_v1')
+localStorage.removeItem('icompass_v1')
 location.reload()
 ```
 
