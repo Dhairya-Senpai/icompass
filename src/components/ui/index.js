@@ -1,7 +1,6 @@
 export { Badge } from './Badge'
 export { Button } from './Button'
 export { Card, CardHeader, CardTitle, CardContent } from './Card'
-export { EmptyState } from './EmptyState'
 export { Input, Textarea, Label, FormGroup } from './Form'
 export { Modal } from './Modal'
 export { ProgressBar } from './ProgressBar'
